@@ -1,0 +1,19 @@
+export component MyButton inherits Rectangle {
+    width: 200px;
+    height: 60px;
+
+    in property <string> label;
+    callback clicked();
+
+    Text {
+        x: 0px;
+        y: 0px;
+        text: label;
+        font-size: 10px;
+    }
+    TouchArea {
+        clicked => {
+            root.clicked();
+        }
+    }
+}

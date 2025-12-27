@@ -1,0 +1,152 @@
+export component Grid_Keys inherits GridLayout {
+    width: 350px;
+    height: 300px;
+    padding: 10px;
+    spacing: 10px;
+
+    VerticalLayout {
+        spacing: 5px;
+        Rectangle {
+            clip: true;
+            TextInput {
+                text: "0";
+                color: red;
+                font-size: 24pt;
+                width: max(parent.width, self.preferred-width);
+                vertical-alignment: center;
+                horizontal-alignment: right;
+                input-type: number;
+                read-only: false;
+
+                private property <length> margin: 1rem;
+                cursor-position-changed(cursor-position) => {
+                    if cursor-position.x + self.x < margin {
+                        self.x = - cursor-position.x + margin;
+                    } else if cursor-position.x + self.x > parent.width - margin - self.text-cursor-width {
+                        self.x = parent.width - cursor-position.x - margin - self.text-cursor-width;
+                    }
+                }
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                border-width: 2px;
+                border-color: lightslategray;
+                border-radius: 10px;
+                background: #315afd;
+                Text {
+                    text: "%";
+                    color: white;
+                    font-size: 24pt;
+                }
+            }
+            Rectangle {
+                border-width: 2px;
+                border-color: lightslategray;
+                border-radius: 10px;
+                background: #315afd;
+                Text {
+                    text: "MU";
+                    color: white;
+                    font-size: 24pt;
+                }
+            }
+
+        }
+
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                background: red;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                background: red;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                background: red;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+        }
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                background: red;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+        }
+        HorizontalLayout {
+            spacing: 5px;
+            Rectangle {
+                background: red;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+            Rectangle {
+                background: blue;
+            }
+        }
+    }
+}
